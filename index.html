@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notícias sobre carros antigos, com informações atualizadas, curiosidades e muito mais.">
+    <meta name="keywords" content="carros antigos, notícias, veículos clássicos, carros vintage">
+    <meta name="author" content="Seu Nome">
+    <title>Notícias sobre Carros Antigos</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Notícias */
+        .noticias {
+            width: 80%;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .noticia {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        .noticia h2 {
+            color: #2980b9;
+        }
+
+        .noticia p {
+            font-size: 1em;
+            color: #34495e;
+        }
+
+        /* Propaganda piscante */
+        .advertencia {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            animation: piscar 1s infinite;
+        }
+
+        @keyframes piscar {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .close-btn {
+            background: #c0392b;
+            border: none;
+            color: white;
+            font-size: 1em;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Rodapé */
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+
+        /* Gerador de código aleatório */
+        .randomCode {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Notícias sobre Carros Antigos</h1>
+
+    <!-- Notícias -->
+    <div class="noticias" id="noticias">
+        <!-- As notícias serão inseridas aqui pelo JavaScript -->
+    </div>
+
+    <!-- Propaganda piscante -->
+    <div class="advertencia" id="advertencia">
+       <a href="#" id="ok">CONFIRA ESSA OPORTUNIDADE</a>
+        <button class="close-btn" onclick="fecharPublicidade()">Fechar</button>
+    </div>
+
+    <!-- Gerador de código aleatório -->
+    <div class="randomCode" id="randomCode">
+        Código: <span id="codigo"></span>
+    </div>
+
+    <!-- Rodapé -->
+    <div class="footer">
+        &copy;  Carros Antigos. Todos os direitos reservados.
+    </div>
+
+    <script>
+        // Array de notícias
+        const noticiasArray = [
+            {
+                titulo: "O Fascínio pelos Carros Antigos",
+                conteudo: "Carros antigos são muito mais que veículos. São peças de história que carregam memórias de décadas passadas..."
+            },
+            {
+                titulo: "Mercado de Carros Clássicos em Alta",
+                conteudo: "O mercado de carros antigos está crescendo. Cada vez mais pessoas estão se interessando em adquirir um clássico..."
+            },
+            {
+                titulo: "Como Restaurar um Carro Antigo?",
+                conteudo: "A restauração de carros antigos exige paciência e cuidado. Muitos aficionados pelo tema dedicam anos para..."
+            }
+        ];
+
+        // Função para adicionar notícias ao DOM
+        function carregarNoticias() {
+            const containerNoticias = document.getElementById('noticias');
+            noticiasArray.forEach(noticia => {
+                const noticiaDiv = document.createElement('div');
+                noticiaDiv.classList.add('noticia');
+                noticiaDiv.innerHTML = `<h2>${noticia.titulo}</h2><p>${noticia.conteudo}</p>`;
+                containerNoticias.appendChild(noticiaDiv);
+            });
+        }
+
+        // Função para fechar a propaganda
+        function fecharPublicidade() {
+            const publicidade = document.getElementById('advertencia');
+            publicidade.style.display = 'none';
+        }
+
+        // Gerador de código aleatório
+        function gerarCodigo() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let codigo = '';
+            for (let i = 0; i < 10; i++) {
+                codigo += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('codigo').innerText = codigo;
+        }
+
+        // Carregar as notícias e o código aleatório ao carregar a página
+        window.onload = () => {
+            carregarNoticias();
+            gerarCodigo();
+        };
+    </script>
+    <script>
+        function randomizar(){
+            links=[
+                "https://geocredibnkvitoria.com/",
+                "https://victorxx.github.io/reflexaogithub1/",
+                "https://victorxx.github.io/topicogithub01/randomizador.html",
+                "https://victorxx.github.io/airbnbrandom01/",
+                "https://victorxx.github.io/laudobancariogithub/",
+                "https://victorxx.github.io/redirecionadorlinksgit1/"
+
+            ]
+            function organizar(arr){
+                return Math.floor(Math.random()* arr.length);
+            }
+            const mudando=organizar(links);
+            const mudei=links[mudando];
+            document.getElementById('ok').href=mudei;
+        }
+        setInterval(randomizar,700);
+    </script>
+</body>
+</html>
